@@ -9,7 +9,7 @@ typedef unsigned long long uint64_t;
 
 void initData(uint64_t *data, uint64_t data_len);
 void printData(uint64_t *data, uint64_t data_len, float using_time);
-__global__ void reduce_v0(uint64_t *data_gpu);
+__global__ void reduce_v1(uint64_t *data_gpu);
 
 
 
@@ -44,7 +44,7 @@ int main(){
 
 	// repeating 1000 times
 	for(int i = 0; i < RT; i++){
-		reduce_v0<<<blocks, threads>>>(data_gpu);
+		reduce_v1<<<blocks, threads>>>(data_gpu);
 	}
 
 	cudaEventRecord(stop, 0);
@@ -83,7 +83,7 @@ void printData(uint64_t *data, uint64_t data_len, float using_time){
 }
 
 
-__global__ void reduce_v0(uint64_t *data_gpu){
+__global__ void reduce_v1(uint64_t *data_gpu){
 	int tid = threadIdx.x;
 
 	// load data into shared memory
