@@ -22,7 +22,7 @@ int main(){
 
 
 	/*--Init CUDA Environment----*/
-	int threads_num = 1024;
+	int threads_num = 512;
 	int blocks_num = 1;
 	dim3 threads, blocks;
 	threads.x = threads_num;
