@@ -70,7 +70,7 @@ void initData(uint64_t *data, uint64_t data_len){
 
 
 void printData(uint64_t *data, uint64_t data_len, float using_time){
-	printf("\n-----Reduction Result (version 4)----\n");
+	printf("\n-----Reduction Result (version 5)----\n");
 	printf("\n0+1+2+3+...+1023 = ");
 	uint64_t count = 0;
 	for(uint64_t i = 0; i < data_len; i++){
